@@ -19,4 +19,52 @@ body.open-dark {
     float: none;
     margin: 0 auto;
 }
-img.hide-img { visibility: hidden; }
+
+img { margin: 50px auto; }
+#dimTop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+#dimBot {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+#lyrics {
+  margin-top: 1%;
+  text-align: center;
+  font-size: 3em;
+  font-family: Papyrus,fantasy;
+  font-weight: bold;
+}
+
+#play {
+  margin: 200px auto;
+  /*padding: 40px;*/ 
+  font-size: 3em;
+}
+
+#mute {
+  background: black;
+  border: 0 none;
+  color: gray;
+}
+#mute:focus, #mute:active:focus, #mute.active:focus { outline: 0 none; }
+
+#inspiration { font-size: 2em; }
+#inspiration div:first-child { text-align: right; }
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
