@@ -1,0 +1,25 @@
+.instructions {
+	padding: 8px 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+.instructions b { color:#CE0901; }
+.schedule { font-weight: bold; }
+.table { 
+   margin: auto;
+   margin-top: 5px;
+}
+@media (min-width: 899px) {
+   .table { width: 85%; }
+}
+.table > thead > tr > td {
+   line-height: 1.2;
+   height: 30px;
+   border: 1px solid #888;
+   padding: 5px;
+   vertical-align: middle;
+   font-size: 13px;
+   font-weight: bold;
+   background-color: #00235d;
+   color: #fff;
+}

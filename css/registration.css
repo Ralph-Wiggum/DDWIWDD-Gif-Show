@@ -1,0 +1,77 @@
+.table {
+	margin: auto;
+	border-top: double 3px #000;
+}
+@media (min-width: 899px) {
+	.table { width: 78%; }
+}
+.table thead > tr > td {	
+	line-height: 1.3;
+	padding: 5px;
+	border-top: solid 3px #fff;
+	vertical-align: middle;
+	font-weight: bold; 
+	background-color: #F0F0FF;
+}
+.table > tbody > tr:nth-child(odd) {
+	background-color: #fff;
+}
+.table > tbody > tr:nth-child(even) {
+	background-color: #ebebeb;	
+}
+.table tbody > tr > td { 
+	line-height: 1.3;
+	padding: 3px 5px; 
+	border-top: solid 3px #fff;
+	vertical-align: middle;
+	font-size: 12px;
+}
+.track-link {
+	font-size: 11px;
+   text-align: left;
+}
+@media (max-width: 768px) {
+	.track-link { text-align: center; }
+}
+.track-link a {	
+   font-size: 15px;
+   font-weight: bold;
+   color: #008000;
+   text-decoration: underline;
+}
+
+#address-box {
+	margin-top: 10px;
+   display: inline-block;
+   border-top: solid 1px #000;
+   border-bottom: solid 1px #000;
+}
+#address-box br {
+	content: " ";
+   display: block;
+   margin: 3px 0;
+}
+#address-box h2 {
+	padding: 0;
+	margin: 2px;
+	font-size: 26px;
+	font-weight: bold;
+	color: #008000;
+}
+#address-box h3 {
+	padding: 0;
+	margin: 2px;
+	font-size: 19px;
+	color: #CE0901;
+}
+#address-box h4 {
+	padding: 0;
+	margin-top: 4px;
+	margin-bottom: 3px;
+	font-size: 13px;
+	font-weight: bold;
+}
+#address-box h4 a { 
+   text-decoration: underline;
+   color: #009900; 
+}

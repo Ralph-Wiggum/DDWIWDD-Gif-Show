@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DDWIWDD Gif Show</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/twbscolor.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<style>
+img { margin: 40px auto; }
+img.resize{
+  width: auto;
+  height: 500px;
+}
+#dimTop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+#dimBot {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+#lyrics {
+  margin-top: 1%;
+  text-align: center;
+  font-size: 3em;
+  font-family: Papyrus,fantasy;
+  font-weight: bold;
+}
+
+#play {
+  margin: 200px auto;
+  /*padding: 40px;*/ 
+  font-size: 3em;
+}
+
+#mute {
+  background: black;
+  border: 0 none;
+  color: gray;
+}
+#mute:focus, #mute:active:focus, #mute.active:focus { outline: 0 none; }
+#inspiration { font-size: 2em; }
+</style>
+</head>
+<body class="open-dark" style="background: linear-gradient(to bottom, black, white);">
+
+  <audio id="musicTrack" src="audio/When I Was Done Dying.mp3" preload="auto"></audio>
+  <span id="inspiration">This website is inspired by the music video for <a href="https://vimeo.com/123219861" target="_blank">"When I Was Done Dying" by Dan Deacon.</a></span>
+  <div class="text-center"><button id="play" class="btn btn-success btn-lg">Start The Show</button></div>
+
+  <!-- <div id="dimTop"></div> -->
+  <div id="dimBot">
+    <div id="lyrics"> - Lyrics - </div>
+    <div style="position: fixed; bottom: 2%; left: 0;"><button type="button" id="mute" class="btn btn-default btn-lg">Mute</button></div>
+    <div style="position: fixed; bottom: 2%; right: 0;"><button type="button" class="btn btn-danger" id="stoup">stoup</button></div>
+    <div id="time-debug" style="text-align: center;">Time</div>
+  </div>
+
+  <div class="row"><img id="frame1" class="img-responsive resize" src="images/0-06.gif" /></div>
+  <div class="row"><img id="frame2" class="img-responsive resize" src="images/0-09.gif" /></div>
+  <div class="row"><img id="frame3" class="img-responsive resize" src="images/0-12.gif" /></div>
+  <div class="row"><img id="frame4" class="img-responsive resize" src="images/0-15.gif" /></div>
+  <div class="row"><img id="frame5" class="img-responsive resize" src="images/0-16.gif" /></div>
+  <div class="row"><img id="frame6" class="img-responsive resize" src="images/0-18.gif" /></div>
+  <div class="row"><img id="frame7" class="img-responsive resize" src="images/0-19.gif" /></div>
+  <div class="row"><img id="frame8" class="img-responsive resize" src="images/0-20.gif" /></div>  <!-- Eyes open, Lyrics start. -->
+  <div class="row"><img id="frame9" class="img-responsive resize" src="images/0-21.gif" /></div>
+  <div class="row"><img id="frame10" class="img-responsive resize" src="images/0-24.gif" /></div>
+  <div class="row"><img id="frame11" class="img-responsive resize" src="images/0-25.gif" /></div>
+  <div class="row"><img id="frame12" class="img-responsive resize" src="images/0-27.gif" /></div>
+  <!-- <div class="row"><img id="frame13" class="img-responsive resize" src="images/0-28.gif" /></div> -->
+  <div class="row"><img id="frame13" class="img-responsive resize" src="images/0-29.gif" /></div>
+  <div class="row"><img id="frame14" class="img-responsive resize" src="images/0-30.gif" /></div>   <!-- "And it startled me so" -->
+  <div class="row"><img id="frame15" class="img-responsive resize" src="images/0-32.gif" /></div>
+  <div class="row"><img id="frame16" class="img-responsive resize" src="images/0-35.gif" /></div>
+  <div class="row"><img id="frame17" class="img-responsive resize" src="images/0-36.gif" /></div>
+  <div class="row"><img id="frame18" class="img-responsive resize" src="images/0-40.gif" /></div>
+  <div class="row"><img id="frame19" class="img-responsive resize" src="images/0-41.gif" /></div>
+  <div class="row"><img id="frame20" class="img-responsive resize" src="images/0-50.gif" /></div>
+
+  <div class="row"><img id="frame21" class="img-responsive resize" src="images/cat1.jpg" /></div>
+  <div class="row"><img id="frame22" class="img-responsive resize" src="images/cat2.jpg" /></div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/utilityClasses.js"></script>
+<script src="js/gifShow.js"></script>
+<script>
+window.onbeforeunload = function(){ window.scrollTo(0,0); }   // Snap screen to top.
+</script>
+</body>
+</html>

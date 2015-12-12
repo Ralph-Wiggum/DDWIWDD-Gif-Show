@@ -1,0 +1,239 @@
+/* Media Queries: http://stackoverflow.com/a/18850777/1208507 */
+
+/* Open-Dark Layout: */
+body.open-dark {
+  margin: 10px;
+  overflow-x: hidden;
+  /*font-family: serif;*/
+  background-color: DarkSlateGray;
+  color: WhiteSmoke;
+}
+.open-dark video,
+.open-dark .iframe-container {
+  display: block;
+  width: 85%;
+  margin: 10px auto;
+  overflow: hidden;
+  text-align: center;
+}
+.open-dark nav.navbar-default {
+  background-color: LightSlateGray;
+  border-color: LightSlateGray;
+}
+.open-dark a.navbar-brand {
+  font-size: 28px;
+  font-family: impact;
+  letter-spacing: 2px;
+  color: black;
+}
+.open-dark > h1,
+.open-dark > h2 {
+  margin-left: 8%;
+}
+@media(max-width: 767px) {
+  .open-dark > h2 { font-size: 18px; }
+}
+.open-dark nav {
+  width: 95%;
+  margin: auto;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+div.artist,
+div.actor {
+  margin-top: 8px;
+  margin-left: 2px;
+  margin-right: 2px;
+  /* padding-bottom: 5px; */
+  border: solid black;
+  border-left-width: 15px;
+  border-right-width: 15px;
+}
+.artist h1 { 
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  background-color: black;
+text-align: center;
+}
+.artist h2 {
+  margin-top: 8px;
+  padding-left: 8px;
+}
+.close-artist {
+  margin-top: 1px;
+  /*margin-right: 5px;*/
+  float: right;
+  font-size: .45em;
+  font-weight: bold;
+  background-color: darkred;
+}
+.artist .btn-block {
+  width: 80%;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  color: black;
+}
+
+.maximize-video {
+  position: absolute;
+  bottom: 11px;
+  right: 4%;
+  /*right: 25px;*/
+  padding: .3em .7em;
+  font-size: .8em;
+}
+@media(max-width: 767px) {
+  .maximize-video { visibility: hidden; }
+}
+
+
+/* * * *  Styles for outside websites thumbnails before embedding  * * * */
+
+/* Embedded content starts as a static image. On click replaces with iframe: */
+.xhamster,
+.xvideos,
+.xxxbunker {
+  height: 0;
+  width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.xhamster  { padding-top: 70.35175879396985%;  /* Thumbnail: 398x280 */ }
+.xvideos   { padding-top: 75.29976019184652%;  /* Thumbnail: 417x314 */ }
+.xxxbunker { padding-top: 56.27240143369176%;  /* Thumbnail: 558x314 */ }
+
+.xhamster::before,
+.xvideos::before,
+.xxxbunker::before { /* play bubble */
+  content: '';
+  background: rgba(255, 255, 255, .6);
+  height: 80px;
+  width: 80px;
+  display:block;
+  margin: -40px 0 0 -40px;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 20px 3px rgba(51, 51, 51, .8);
+  transition: all .1s ease;
+  z-index:1;
+}
+.xhamster:hover::before,
+.xvideos:hover::before,
+.xxxbunker:hover::before { /* play bubble hover */
+  background: rgba(238, 238, 238, .8);
+  box-shadow: 0 0 10px 3px rgba(51, 51, 51, .8);
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 -50px;
+}
+.xhamster::after,
+.xvideos::after,
+.xxxbunker::after { /* Play Triangle */
+  content: '';
+  width: 0;
+  height: 0;
+  line-height:0px;
+  display:block;
+  border-style: solid;
+  border-width: 20px 0 20px 40px;
+  margin: -20px 0 0 -15px;
+  border-color: transparent transparent transparent #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0;
+  width: 0;
+  z-index:2;
+}
+.xhamster iframe,
+.xvideos iframe,
+.xxxbunker object { z-index: 3; }
+
+
+/* * * Used for imges.htm: * * */
+body.dim-back { background-color: lavender; }
+.full {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+img.hide-img { visibility: hidden; }   /* Used for hideGifs() */
+#source-button {
+  position: fixed;
+  z-index: 3;   /* The fullscreen image is set to 2. */
+}
+.bottom-screen { bottom: 1%; }
+.left-center-screen,
+.right-center-screen { top: 15%; } /* Align button with center screen. */
+.left-center-screen { left: 1%; }
+.right-center-screen { right: 1%; }
+
+/* Navigation buttons thanks to:
+ * https://bootstrapbay.com/blog/bootstrap-button-styles/ */
+#next,
+#prev {
+  position: fixed;
+  display: none;
+  z-index: 3;   /* The fullscreen image is set to 2. */
+  opacity: 0.02;
+  /*opacity: 0.2;*/
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#next.btn.outline,
+#prev.btn.outline {
+  height: 75%;
+  width: 20%;
+  /*width: 45px;*/
+  padding: 5px 5px;
+  background: none;
+}
+#next.btn-primary.outline,
+#prev.btn-primary.outline {
+  border: 2px solid lavender;
+  /*border: 2px solid #0099cc;
+  color: #0099cc;*/
+}
+#next.btn-primary.outline:hover,
+#next.open > #next.dropdown-toggle.btn-primary,
+#prev.btn-primary.outline:hover,
+#prev.open > #prev.dropdown-toggle.btn-primary {
+  /*color: #33a6cc;
+  border-color: #33a6cc;*/
+  /*opacity: 0.5;*/
+}
+#next.btn-primary.outline:active,
+#next.btn-primary.outline.active,
+#prev.btn-primary.outline:active,
+#prev.btn-primary.outline.active {
+  /*border-color: #007299;
+  color: #007299;*/
+  box-shadow: none;
+  /*opacity: 0.2;*/
+}
+
+/* Style for blog: */
+/* video,
+.iframe-container {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+} */
