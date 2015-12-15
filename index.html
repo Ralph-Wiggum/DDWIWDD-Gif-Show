@@ -8,10 +8,9 @@
 <title>DDWIWDD Gif Show</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/twbscolor.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 </head>
-<body class="open-dark" style="background: linear-gradient(to bottom, black, white);">
+<body class="open-dark">
 
   <audio id="musicTrack" src="audio/When I Was Done Dying.mp3" preload="auto"></audio>
 
@@ -21,6 +20,13 @@
   </div>
 
   <div class="text-center"><button id="play" class="btn btn-success btn-lg">Start The Show</button></div>
+
+  <div class="form-inline">
+    <div class="form-group">
+      <label for="goToFrame">Chrome-Debug:</label>
+      <input type="text" class="form-control" id="goToFrame" size="1">
+    </div>
+  </div>
 
   <!-- <div id="dimTop"></div> -->
   <div id="dimBot">
@@ -58,11 +64,50 @@
   <div class="row"><img id="frame26" class="img-responsive" src="images/1-00.gif" /></div>
   <div class="row"><img id="frame27" class="img-responsive" src="images/1-02.gif" /></div>
   <div class="row"><img id="frame28" class="img-responsive" src="images/1-04.gif" /></div>
-  <div class="row"><img id="frame29" class="img-responsive" src="images/1-05.gif" /></div>
-  <div class="row"><img id="frame30" class="img-responsive" src="images/1-06.gif" /></div>
+  <div class="row"><img id="frame29" class="img-responsive" src="images/1-06.gif" /></div>
+  <div class="row"><img id="frame30" class="img-responsive" src="images/1-07.gif" /></div>
+  <div class="row"><img id="frame31" class="img-responsive" src="images/1-10.1.gif" /></div>
+  <div class="row"><img id="frame32" class="img-responsive" src="images/1-10.2.gif" /></div>
+  <div class="row"><img id="frame33" class="img-responsive" src="images/1-14.gif" /></div>
+  <div class="row"><img id="frame34" class="img-responsive" src="images/1-16.gif" /></div>
+  <div class="row"><img id="frame35" class="img-responsive" src="images/1-17.gif" /></div>  <!-- And I tore up the shirt and I ate up the sleeves (38, 39) -->
+  <div class="row"><img id="frame36" class="img-responsive" src="images/1-20.gif" /></div>
+  <div class="row"><img id="frame37" class="img-responsive" src="images/1-21.gif" /></div>  <!-- And they laughed out at me and said "what is your plan?" (40, 41) -->
+  <div class="row"><img id="frame38" class="img-responsive" src="images/1-22.gif" /></div>
+  <div class="row"><img id="frame39" class="img-responsive" src="images/1-23.gif" /></div>  <!-- But their question was foreign I could not understand (42, 43) -->
+  <div class="row"><img id="frame40" class="img-responsive" src="images/1-27.gif" /></div>  <!-- When then suddenly I'm ripped up and placed into a mouth -->
+  <div class="row"><img id="frame41" class="img-responsive" src="images/1-28.gif" /></div>
+  <div class="row"><img id="frame42" class="img-responsive" src="images/1-29.1.gif" /></div>
+  <div class="row"><img id="frame43" class="img-responsive" src="images/1-29.2.gif" /></div>
+  <div class="row"><img id="frame44" class="img-responsive" src="images/1-32.gif" /></div>
+  <div class="row"><img id="frame45" class="img-responsive" src="images/1-35.gif" /></div>
+  <div class="row"><img id="frame46" class="img-responsive" src="images/1-38.gif" /></div>
+  <div class="row"><img id="frame47" class="img-responsive" src="images/1-40.gif" /></div>
+  <div class="row"><img id="frame48" class="img-responsive" src="images/1-42.gif" /></div>
+  <div class="row"><img id="frame49" class="img-responsive" src="images/1-47.gif" /></div>
+  <div class="row"><img id="frame50" class="img-responsive" src="images/1-49.gif" /></div>
+  <div class="row"><img id="frame51" class="img-responsive" src="images/1-51.gif" /></div>
+  <div class="row"><img id="frame52" class="img-responsive" src="images/1-53.gif" /></div>
+  <div class="row"><img id="frame53" class="img-responsive" src="images/1-55.gif" /></div>
+  <div class="row"><img id="frame54" class="img-responsive" src="images/1-58.gif" /></div>
+  <div class="row"><img id="frame55" class="img-responsive" src="images/1-59.gif" /></div>
+  <div class="row"><img id="frame56" class="img-responsive" src="images/2-01.gif" /></div>
+  <div class="row"><img id="frame57" class="img-responsive" src="images/2-03.gif" /></div>
+  <div class="row"><img id="frame58" class="img-responsive" src="images/2-04.gif" /></div> <!-- Horses appear. -->
+  <div class="row"><img id="frame59" class="img-responsive" src="images/2-05.gif" /></div>
+  <div class="row"><img id="frame60" class="img-responsive" src="images/2-08.1.gif" /></div>
+  <div class="row"><img id="frame61" class="img-responsive" src="images/2-08.2.gif" /></div>
+  <div class="row"><img id="frame62" class="img-responsive" src="images/2-09.gif" /></div>
+  <div class="row"><img id="frame63" class="img-responsive" src="images/2-11.gif" /></div>
+  <div class="row"><img id="frame64" class="img-responsive" src="images/2-12.2.gif" /></div>
+  <div class="row"><img id="frame65" class="img-responsive" src="images/2-14.gif" /></div>
+  <div class="row"><img id="frame66" class="img-responsive" src="images/2-16.1.gif" /></div>
+  <div class="row"><img id="frame67" class="img-responsive" src="images/2-16.2.gif" /></div>
+  <div class="row"><img id="frame68" class="img-responsive" src="images/2-17.gif" /></div>
+  <div class="row"><img id="frame69" class="img-responsive" src="images/2-18.gif" /></div>
 
-  <div class="row"><img id="frame31" class="img-responsive" src="images/cat1.jpg" /></div>
-  <div class="row"><img id="frame32" class="img-responsive" src="images/cat2.jpg" /></div>
+  <div class="row"><img id="frame70" class="img-responsive" src="images/cat1.jpg" /></div>
+  <div class="row"><img id="frame71" class="img-responsive" src="images/cat2.jpg" /></div>
 
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/bootstrap.min.js"></script>

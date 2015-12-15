@@ -1,4 +1,4 @@
-/* Media Queries: http://stackoverflow.com/a/18850777/1208507 */
+body { background: linear-gradient(to bottom, black, white); }
 
 /* Open-Dark Layout: */
 body.open-dark {
@@ -50,10 +50,21 @@ img { margin: 50px auto; }
 }
 
 #play {
-  margin: 200px auto;
+  margin-top: 200px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin: 200px auto;*/
   /*padding: 40px;*/ 
   font-size: 3em;
 }
+.form-inline {
+  float: none;
+  margin-bottom: 250px;
+  text-align: center;
+}
+.form-inline .form-group { display: inline-block; }
+#goToFrame { margin-left: 1em; }
 
 #mute {
   background: black;
