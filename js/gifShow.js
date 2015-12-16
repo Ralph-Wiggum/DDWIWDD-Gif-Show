@@ -12,25 +12,20 @@
 
   $( "#play" ).click(function() {
     var frameDebug = $('#goToFrame').val();
-    if (frameDebug.length > 0) {
-      frameDebug = parseInt(frameDebug, 10);
-      music.currentTime = frameDebug * (halfNoteTime);
-      showCount = frameDebug;
-      imgCount = frameDebug - countScenesHeld(frameDebug);
-    }
+    if (frameDebug.length > 0)
+      debugOn(frameDebug);
     music.play();
     scrollNext(animationTime);
     animateId = setInterval(runShow, timeBetweenSlides);
   });
-  
+
   /** Debugging function:
    *  Uses global array 'holdScenes' to adjust for what image to go to. */
   function countScenesHeld(frameDebug) {
     var skipCount = 0;
-    for (var i = 0; i < holdScenes.length; i++) {
-      if (frameDebug <= holdScenes[i])
+    for (skipCount; skipCount < holdScenes.length; skipCount++) {
+      if (frameDebug <= holdScenes[skipCount])
         break;
-      skipCount++;
     }
     return skipCount;
   }
@@ -63,17 +58,17 @@
     toggleMusic();
   });
 
-  var totalImages = $('img').length;
-  var lyricsPadded = ["", "", "", "", "", "", ""];  // Lyrics start at 8.
-  var lyrics = [ "When I was done dying","my conscience regained","So I began my struggle","a nothingness strained","Out a flash made of time","my new form blasted out","And it startled me so","and I burst out a shout","At which my legs ran frantic","like birds from a nest","And I ran until drained","leaving no choice but rest","So I fell asleep softly","at the edge of a cave","But I should have gone in deeper","but I'm not so brave","And like that I was torn out","and thrown in the sky","And I said all my prayers","because surely I'll die","As I crashed down and smashed","into earth, into dirt","How my skin did explode","leaving only my shirt","But from shirt grew a tree","and then tree grew a fruit","And I became the seed","and that seed was a brute","And I clawed through the ground","with my roots and my leaves","And I tore up the shirt","and I ate up the sleeves","And they laughed out at me","and said \"what is your plan?\"","But their question was foreign","I could not understand","When then suddenly I'm ripped up","and placed into a mouth","And it swallowed me down","at which time I head south so I said","Hey ya ya","Hey ya ya","Hey ya ya","Hey hey hey" ];
-  Array.prototype.push.apply(lyricsPadded, lyrics);
+  var lyrics = ["","","","","","","","When I was done dying","my conscience regained","So I began my struggle","a nothingness strained","Out a flash made of time","my new form blasted out","And it startled me so","and I burst out a shout","At which my legs ran frantic","like birds from a nest","And I ran until drained","leaving no choice but rest","So I fell asleep softly","at the edge of a cave","But I should have gone in deeper","but I'm not so brave","And like that I was torn out","and thrown in the sky","And I said all my prayers","because surely I'll die","As I crashed down and smashed","into earth, into dirt","How my skin did explode","leaving only my shirt","But from shirt grew a tree","and then tree grew a fruit","And I became the seed","and that seed was a brute","And I clawed through the ground","with my roots and my leaves","And I tore up the shirt","and I ate up the sleeves","And they laughed out at me","and said \"what is your plan?\"","But their question was foreign","I could not understand","When then suddenly I'm ripped up","and placed into a mouth","And it swallowed me down","at which time I head south so I said","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Well I woke up to see them,","these two mighty steeds","With their mouths grinning wildly","expressing my needs","As they stood there above me,","being flanked on each side","I felt no need to fear them,","no reason to hide","So I reached up to touch","but they faded too soon","Yet their mouths still remained","and stacked up towards the moon","How that ladder of mouth","waved so soft in the night","And I looked up in awe","at that beautiful sight","And I dreamt about climbing","into the night sky","But I knew had I touched them","they'd mouth back 'bye bye'","So I got up and walked down","the path in the dark","And there deep in the distance","my eye caught a spark","Of a crab twice my size","with incredible strength","Oh it greeted me kindly","and then we all drank","And we drooled out together","right onto the ground","And the ocean grew up quickly","right up all around","And the earth looked at me","and said \"wasn't that fun?\"","And I replied","\"I'm sorry if I hurt anyone\"","And without even thinking","cast me into space","But before she did that","she wiped off my own face","She said better luck next time","don't worry so much","Without ears I couldn't hear","I could just feel the touch","As I feel asleep softly","at the edge of a cave","But I should have gone deeper","but I'm not so brave","I said","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey","Hey ya ya","Hey hey hey",""];
+  //var lyrics = buildLyrics();
 
   /** Displays the next lyric at the specified index.
    *  Does nothing when called on an index out of bounds. */
   function nextLyric(index) {
-    if ((index > -1) && (index < lyricsPadded.length))
-      $('#lyrics').text(lyricsPadded[index]);
+    if ((index > -1) && (index < lyrics.length))
+      $('#lyrics').text(lyrics[index]);
   }
+
+  var totalImages = $('img').length;
 
   /** Every image frame is identified sequentially: "frame#".
    *  imgCount is number ending the image ID and is incremented.
@@ -97,4 +92,41 @@
       offset = imgOffset;
     }
     $('html, body').animate({ scrollTop: offset }, aTime);
+  }
+
+  /* One lyrics for every showCount.
+   * Goal: When lyrics are completed, generate array once and just use that. */
+  function buildLyrics() {
+    var fullLyrics = ["", "", "", "", "", "", ""];  // Lyrics start at 8.
+    var firstVerse = [ "When I was done dying","my conscience regained","So I began my struggle","a nothingness strained","Out a flash made of time","my new form blasted out","And it startled me so","and I burst out a shout","At which my legs ran frantic","like birds from a nest","And I ran until drained","leaving no choice but rest","So I fell asleep softly","at the edge of a cave","But I should have gone in deeper","but I'm not so brave","And like that I was torn out","and thrown in the sky","And I said all my prayers","because surely I'll die","As I crashed down and smashed","into earth, into dirt","How my skin did explode","leaving only my shirt","But from shirt grew a tree","and then tree grew a fruit","And I became the seed","and that seed was a brute","And I clawed through the ground","with my roots and my leaves","And I tore up the shirt","and I ate up the sleeves","And they laughed out at me","and said \"what is your plan?\"","But their question was foreign","I could not understand","When then suddenly I'm ripped up","and placed into a mouth","And it swallowed me down","at which time I head south so I said" ];
+    Array.prototype.push.apply(fullLyrics, firstVerse);
+
+    var chorus = [ "Hey ya ya","Hey hey hey" ];
+    var chorusCount = 8;
+    for (var i=0; i < chorusCount; i++) {
+      Array.prototype.push.apply(fullLyrics, chorus);
+    }
+
+    var secondVerse = [ "Well I woke up to see them,","these two mighty steeds","With their mouths grinning wildly","expressing my needs","As they stood there above me,","being flanked on each side","I felt no need to fear them,","no reason to hide","So I reached up to touch","but they faded too soon","Yet their mouths still remained","and stacked up towards the moon","How that ladder of mouth","waved so soft in the night","And I looked up in awe","at that beautiful sight","And I dreamt about climbing","into the night sky","But I knew had I touched them","they'd mouth back 'bye bye'","So I got up and walked down","the path in the dark","And there deep in the distance","my eye caught a spark","Of a crab twice my size","with incredible strength","Oh it greeted me kindly","and then we all drank","And we drooled out together","right onto the ground","And the ocean grew up quickly","right up all around","And the earth looked at me","and said \"wasn't that fun?\"","And I replied","\"I'm sorry if I hurt anyone\"","And without even thinking","cast me into space","But before she did that","she wiped off my own face","She said better luck next time","don't worry so much","Without ears I couldn't hear","I could just feel the touch","As I feel asleep softly","at the edge of a cave","But I should have gone deeper","but I'm not so brave","I said" ];
+    Array.prototype.push.apply(fullLyrics, secondVerse);
+
+    for (var i=0; i < chorusCount; i++) {
+      Array.prototype.push.apply(fullLyrics, chorus);
+    }
+
+    //$('#lyrics').text(JSON.stringify(fullLyrics));
+    return fullLyrics;
+  }
+
+  /* 12-15-15: Jumps to the specified frame.
+   * Audio, lyrics, and images are only synced with Chrome. */
+  function debugOn(frameDebug) {
+    frameDebug = parseInt(frameDebug, 10);
+    music.currentTime = frameDebug * (halfNoteTime);
+    showCount = frameDebug;
+
+    while (frameDebug > totalImages) {
+      frameDebug = frameDebug - totalImages;
+    }
+    imgCount = frameDebug - countScenesHeld(frameDebug);
   }
